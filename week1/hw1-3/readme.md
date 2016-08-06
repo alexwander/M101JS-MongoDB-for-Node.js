@@ -1,0 +1,1 @@
+Need to launch MongoDB database “mongo —dbpath data/db” and then “mongorestore dumpt” from dump, and also “npm install”
