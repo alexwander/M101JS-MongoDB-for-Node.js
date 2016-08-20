@@ -32,6 +32,8 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase', (err, db) => {
 })
 ```
 
+
+
 The `find()` method returns a cursor. We use the `toArray()` method on the cursor to get an array of documents.
 
 Here the same example using Promises:
@@ -41,6 +43,8 @@ Here the same example using Promises:
 
 const MongoClient = require('mongodb').MongoClient
 let connectedDb;
+
+
 
 MongoClient.connect('mongodb://localhost:27017/crunchbase')
     .then((db) => {
@@ -62,17 +66,6 @@ MongoClient.connect('mongodb://localhost:27017/crunchbase')
         console.error('ERROR:', err.message)
     })
 ```
-
-Note that we could directly convert the cursor into an array just as we did in the callback example:
-
-```javascript
-        ...
-        return db.collection('companies').find(query).toArray()
-    })
-    .then((docs) => {
-        ...
-```
-
 
 ## More about the cursor
 
