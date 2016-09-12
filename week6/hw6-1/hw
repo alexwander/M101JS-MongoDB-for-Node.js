@@ -1,0 +1,8 @@
+db.companies.aggregate([     
+  {$match: {"relationships.person": {$ne: null}}},     
+  {$project: {relationships: 1, _id: 0, name: 1}},
+  {$unwind: "$relationships"},     
+  {$group: {_id: "$relationships.person", unique: {"$addToSet": "$name"}}},
+  {$project: {count: {$size: "$unique"}}},     
+  { $sort: {count: -1 }} 
+])
