@@ -1,0 +1,6 @@
+db.grades.aggregate([
+  {$unwind: "$scores"}, 
+  {$match: {"scores.type": {$ne: "quiz"}}}, 
+  {$group: {_id: "$class_id", avgGrade: {$avg: "$scores.score"}}}, 
+  {$sort: {avgGrade: -1}}
+]).pretty()
