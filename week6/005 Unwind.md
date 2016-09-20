@@ -5,31 +5,6 @@
 
 `$unwind` allows us to transform an arry of an input document into a series of documents. E.g.:
 
-```json
-{
-    name:"Peter",
-    age: 24,
-    hobbies:[
-        { "name": "running", "proficiency": "good"}
-        { "name": "drawing", "proficiency": "average"}
-    ]
-}
-```
-
-can be turned into
-
-```json
-[
-{
-    name: "Peter",
-    hobbies: "running"
-},
-{
-    name: "Peter",
-    hobbies: "drawing"
-}
-]
-```
 
 I.e. for each array that is targeted by `$unwind` a new document is created with the array key (in our case `hobbies`) no longer containing an array, but one of the values of the array.
 
@@ -45,6 +20,21 @@ db.companies.aggregate([
         hobby: "$hobbies.name"
     }}
 ])
+```
+
+can be turned into
+
+```json
+[
+{
+    name: "Peter",
+    hobbies: "running"
+},
+{
+    name: "Peter",
+    hobbies: "drawing"
+}
+]
 ```
 
 
