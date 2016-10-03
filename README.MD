@@ -1,5 +1,7 @@
-Homework for M101JS
+Files for M101JS
 =====================
+This repo contain work files, homework's, notes and answers for course <a href="/courses/MongoDB/M101JS/2016_August/syllabus">M101JS: MongoDB for Node.js Developers</a>
+
 
 Week 1
 ----
@@ -28,10 +30,8 @@ Week 6
 Application engineering: Drivers, impact of replication and sharding on design and
 development.
 
-Week 7
-----
-Case studies from the field
 
 Week 7
 ----
 Final exam with answers
+Creating Mongomart
